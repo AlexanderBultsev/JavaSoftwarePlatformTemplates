@@ -1,6 +1,7 @@
 package Practice02;
 
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.stream.Stream;
@@ -20,8 +21,30 @@ public class App {
     }
 
     public void run() {
-        System.out.println("Beginning at " + LocalDate.now());
-        System.out.println("First step is to sort by last name");
-        humans.stream().sorted(Comparator.comparing(Human::getFirstName).reversed()).forEach(System.out::println);
+        System.out.println("Beginning at " + LocalTime.now());
+        System.out.println("-------------------\nFirst step is to sort by last name\n-----------------");
+        humans.stream()
+                .sorted(Comparator.comparing(Human::getFirstName).reversed())
+                .forEach(System.out::println);
+        System.out.println("-------------------\nSecond step is to filter by age\n-------------------");
+        humans.stream()
+                .sorted(Comparator.comparing(Human::getFirstName).reversed())
+                .filter(human -> human.getAge() > 20)
+                .forEach(System.out::println);
+        System.out.println("-------------------\nThird step is to select first three humans\n-------------------");
+        humans.stream()
+                .sorted(Comparator.comparing(Human::getFirstName).reversed())
+                .filter(human -> human.getAge() > 20)
+                .limit(3)
+                .forEach(System.out::println);
+        System.out.println("-------------------\nFourth step is to concatenate names\n-------------------");
+        Stream <Human> Hstream = humans.stream();
+        Hstream.sorted(Comparator.comparing(Human::getFirstName).reversed())
+                .filter(human -> human.getAge() > 20)
+                .limit(3)
+                .map(Human::getFirstName)
+                .reduce((a, b) -> a + " " + b)
+                .ifPresent(System.out::println);
+        System.out.println("-------------------\nEnd at " + LocalTime.now() + "\n-------------------");
     }
 }
