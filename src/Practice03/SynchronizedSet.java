@@ -13,41 +13,6 @@ public class SynchronizedSet<T> implements Set<T> {
     }
 
     @Override
-    public synchronized boolean add(T t) {
-        return set.add(t);
-    }
-
-    @Override
-    public synchronized boolean addAll(Collection<? extends T> c) {
-        return set.addAll(c);
-    }
-
-    @Override
-    public synchronized boolean remove(Object o) {
-        return set.remove(o);
-    }
-
-    @Override
-    public synchronized boolean containsAll(Collection<?> c) {
-        return set.containsAll(c);
-    }
-
-    @Override
-    public synchronized boolean removeAll(Collection<?> c) {
-        return set.removeAll(c);
-    }
-
-    @Override
-    public synchronized void clear() {
-        set.clear();
-    }
-
-    @Override
-    public synchronized boolean retainAll(Collection<?> c) {
-        return set.retainAll(c);
-    }
-
-    @Override
     public synchronized int size() {
         return set.size();
     }
@@ -75,5 +40,40 @@ public class SynchronizedSet<T> implements Set<T> {
     @Override
     public synchronized <T1> T1[] toArray(T1[] a) {
         return set.toArray(a);
+    }
+
+    @Override
+    public synchronized boolean add(T t) {
+        return set.add(t);
+    }
+
+    @Override
+    public synchronized boolean remove(Object o) {
+        return set.remove(o);
+    }
+
+    @Override
+    public synchronized boolean containsAll(Collection<?> c) {
+        return set.containsAll(c);
+    }
+
+    @Override
+    public synchronized boolean addAll(Collection<? extends T> c) {
+        return set.addAll(c);
+    }
+
+    @Override
+    public synchronized boolean retainAll(Collection<?> c) {
+        return set.retainAll(c);
+    }
+
+    @Override
+    public synchronized boolean removeAll(Collection<?> c) {
+        return set.removeAll(c);
+    }
+
+    @Override
+    public synchronized void clear() {
+        set.clear();
     }
 }
