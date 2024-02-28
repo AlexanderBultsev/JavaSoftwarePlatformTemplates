@@ -1,9 +1,7 @@
 package Practice05;
 
 public class SingletonSynchronized {
-
     private static SingletonSynchronized singleton;
-
     private SingletonSynchronized() {}
 
     // Получить экземпляр класса может любой поток

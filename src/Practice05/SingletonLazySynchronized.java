@@ -6,7 +6,7 @@ public class SingletonLazySynchronized {
     private SingletonLazySynchronized() {}
 
     // Получить экземпляр класса может только один поток одновременно
-    public static synchronized SingletonLazySynchronized getInstance() {
+        public static synchronized SingletonLazySynchronized getInstance() {
         if (singleton == null) {
             singleton = new SingletonLazySynchronized();
         }
