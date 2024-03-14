@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+}
+
+group = 'practice09'
+version = '0.0.1'
+
+repositories {}
+
+dependencies {}
+
+tasks.withType(JavaCompile).configureEach {
+    sourceCompatibility = '11'
+    targetCompatibility = '11'
+}
+
+task buildJar(type: Jar) {
+    archiveFileName = 'Generator.jar'
+    from sourceSets.main.output
+
+    manifest {
+        attributes 'Main-Class': 'Generator'
+    }
+}
+
+task copyJar(type: Copy) {
+    dependsOn buildJar
+    from 'build/libs/Generator.jar'
+    into 'docker'
+}
+
+
+task buildDocker(type: Exec) {
+    dependsOn copyJar
+    workingDir 'docker'
+    commandLine 'docker', 'build', '-t', 'generator', '.'
+}
+
+task runDocker(type: Exec) {
+    dependsOn buildDocker
+    commandLine 'docker', 'run', '-d', 'generator'
+}
