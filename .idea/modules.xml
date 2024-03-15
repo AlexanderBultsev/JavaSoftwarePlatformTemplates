@@ -11,9 +11,6 @@
       <module fileurl="file://$PROJECT_DIR$/Practice06/Practice06.iml" filepath="$PROJECT_DIR$/Practice06/Practice06.iml" />
       <module fileurl="file://$PROJECT_DIR$/Practice07/Practice07.iml" filepath="$PROJECT_DIR$/Practice07/Practice07.iml" />
       <module fileurl="file://$PROJECT_DIR$/Practice08/Practice08.iml" filepath="$PROJECT_DIR$/Practice08/Practice08.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Practice09.iml" filepath="$PROJECT_DIR$/Practice09.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Practice09.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Practice09.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Practice09.test.iml" filepath="$PROJECT_DIR$/.idea/modules/Practice09.test.iml" />
     </modules>
   </component>
 </project>
